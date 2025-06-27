@@ -140,7 +140,7 @@ export const ContactSection = () => {
                                 id="message" 
                                 name="message" 
                                 required 
-                                rows={5}
+                                rows={3}
                                 className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
                                 placeholder="Hello, I'd like to discuss..."
                             />

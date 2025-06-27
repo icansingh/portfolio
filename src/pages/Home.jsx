@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { AboutSection } from "../components/AboutSection";
 import { ContactSection } from "../components/ContactSection";
 import { Footer } from "../components/Footer";
@@ -6,8 +7,10 @@ import { Navbar } from "../components/Navbar";
 import { ProjectsSection } from "../components/ProjectsSection";
 import { SkillsSection } from "../components/SkillsSection";
 import { StarBackground } from "../components/StarBackground";
+import { MobileMenuOverlay } from "../components/MobileMenuOverlay";
 
 export const Home = () => {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
     
@@ -15,7 +18,8 @@ export const Home = () => {
     <StarBackground />
 
     {/* Navbar */}
-    <Navbar />
+    <Navbar isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
+    <MobileMenuOverlay isMobileMenuOpen={isMobileMenuOpen} setIsMobileMenuOpen={setIsMobileMenuOpen} />
 
     {/* Main Content */}
     <main>
