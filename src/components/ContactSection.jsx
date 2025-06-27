@@ -1,25 +1,48 @@
 import { Linkedin, Mail, MapPin, Phone, Send } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useToast } from "@/hooks/use-toast"
-import { useState } from "react"
+import { useState, useRef } from "react"
+import emailjs from '@emailjs/browser'
 
 export const ContactSection = () => {
 
     const { toast } = useToast()
     const [isSubmitting, setIsSubmitting] = useState(false)
+    const formRef = useRef()
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
         setIsSubmitting(true)
 
-        setTimeout(() => {
+        try {
+            const result = await emailjs.sendForm(
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                formRef.current,
+                import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+            )
+
+            if (result.status === 200) {
+                toast({
+                    title: "Message sent successfully!",
+                    description: "Thank you for your message. I'll get back to you as soon as possible."
+                })
+                // Reset form
+                formRef.current.reset()
+            } else {
+                throw new Error('Failed to send message')
+            }
+        } catch (error) {
+            console.error('Error sending message:', error)
             toast({
-                title: "Message sent!",
-                description: "Thank you for your message. I'll get back to you as soon as possible."
-            });
-        setIsSubmitting(false)
-        }, 1500);
-    };
+                title: "Failed to send message",
+                description: "There was an error sending your message. Please try again or contact me directly via email.",
+                variant: "destructive"
+            })
+        } finally {
+            setIsSubmitting(false)
+        }
+    }
 
     return (<section id="contact" className="py-24 px-4 relative bg-secondary/30">
         <div className="container mx-auto max-w-5xl">
@@ -87,27 +110,27 @@ export const ContactSection = () => {
                 <div className="bg-card p-8 rounded-lg shadow-xs">
                     <h3 className="text-2xl font-semibold mb-6"> Send a Message </h3>
 
-                    <form className="space-y-6" onSubmit={handleSubmit}>
+                    <form ref={formRef} className="space-y-6" onSubmit={handleSubmit}>
                         <div>
-                            <label htmlFor="name" className="block text-sm font-medium mb-2"> Your Name </label>
+                            <label htmlFor="from_name" className="block text-sm font-medium mb-2"> Your Name </label>
                             <input 
                                 type="text" 
-                                id="name" 
-                                name="name" 
+                                id="from_name" 
+                                name="from_name" 
                                 required 
-                                className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
+                                className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                                 placeholder="John Smith..."
                             />
                         </div>
 
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium mb-2"> Your Email </label>
+                            <label htmlFor="from_email" className="block text-sm font-medium mb-2"> Your Email </label>
                             <input 
                                 type="email" 
-                                id="email" 
-                                name="email" 
+                                id="from_email" 
+                                name="from_email" 
                                 required 
-                                className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
+                                className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary"
                                 placeholder="john.smith@example.com"
                             />
                         </div>
@@ -118,13 +141,31 @@ export const ContactSection = () => {
                                 id="message" 
                                 name="message" 
                                 required 
-                                className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
-                                placeholder="Hello, wassup..."
+                                rows={5}
+                                className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
+                                placeholder="Hello, I'd like to discuss..."
                             />
                         </div>
 
+                        {/* Hidden timestamp field */}
+                        <input 
+                            type="hidden" 
+                            name="time" 
+                            value={new Date().toLocaleString('en-US', {
+                                weekday: 'long',
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric',
+                                hour: 'numeric',
+                                minute: '2-digit',
+                                hour12: true,
+                                timeZone: 'America/Edmonton'
+                            })}
+                        />
+
                         <button type="submit" disabled={isSubmitting} className={cn(
-                            "cosmic-button w-full flex items-center justify-center gap-2"
+                            "cosmic-button w-full flex items-center justify-center gap-2",
+                            isSubmitting && "opacity-50 cursor-not-allowed"
                         )}>
                             {isSubmitting ? "Sending..." : "Send Message"}
                             <Send size={16}/>
