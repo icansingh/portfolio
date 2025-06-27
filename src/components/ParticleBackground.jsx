@@ -15,7 +15,7 @@ export const ParticleBackground = () => {
     }, []);
 
     const generateParticles = () => {
-        const numberOfParticles = Math.floor(window.innerWidth * window.innerHeight / 12000);
+        const numberOfParticles = Math.floor(window.innerWidth * window.innerHeight / 40000);
         const newParticles = [];
 
         for (let i = 0; i < numberOfParticles; i++) {
