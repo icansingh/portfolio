@@ -36,8 +36,7 @@ export const ContactSection = () => {
             console.error('Error sending message:', error)
             toast({
                 title: "Failed to send message",
-                description: "There was an error sending your message. Please try again or contact me directly via email.",
-                variant: "destructive"
+                description: "There was an error sending your message. Please try again or contact me directly via email."
             })
         } finally {
             setIsSubmitting(false)
