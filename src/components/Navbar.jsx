@@ -52,6 +52,12 @@ export const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen, activeSection })
         )}>
             <div className="container flex items-center justify-between">
                 <a className="text-xl font-bold text-primary flex items-center" href="#home">
+                    <img
+                        src="/memoji.png"
+                        alt="Logo"
+                        className="w-8 h-8 mr-2 shadow"
+                        style={{ objectFit: "cover" }}
+                    />
                     <span className="relative z-10">
                         <span className="text-glow text-foreground">Ikjyot's</span> Portfolio
                     </span>
