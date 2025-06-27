@@ -21,6 +21,8 @@
   --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
   --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards; 
   --animate-meteor: meteor 5s linear infinite;
+  --animate-float-slow: float-slow 8s ease-in-out infinite;
+  --animate-float-fast: float-fast 4s ease-in-out infinite;
 
   @keyframes float {
     0%,
@@ -29,6 +31,32 @@
     }
     50% {
       transform: translateY(-10px);
+    }
+  }
+
+  @keyframes float-slow {
+    0%,
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+    25% {
+      transform: translateY(-15px) translateX(5px);
+    }
+    50% {
+      transform: translateY(-10px) translateX(-5px);
+    }
+    75% {
+      transform: translateY(-5px) translateX(3px);
+    }
+  }
+
+  @keyframes float-fast {
+    0%,
+    100% {
+      transform: translateY(0) translateX(0);
+    }
+    50% {
+      transform: translateY(-8px) translateX(3px);
     }
   }
   
@@ -75,7 +103,7 @@
 
     --card: 0 0% 100%;
 
-    --primary: 250 47% 60%;
+    --primary: 35 100% 50%;
     --primary-foreground: 210 40% 98%;
 
     --border: 214 32% 91%;
@@ -90,7 +118,7 @@
 
     --card: 222 47% 8%;
 
-    --primary: 250 65% 65%;
+    --primary: 30 100% 55%;
     --primary-foreground: 213 31% 91%;
 
     --border: 217 33% 20%;
@@ -151,7 +179,7 @@
 
   .text-glow {
     @apply relative;
-    text-shadow: 0 0 10px rgba(167, 139, 250, 0.5);
+    text-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
   }
 
   .card-hover {
@@ -169,7 +197,15 @@
     @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium 
            transition-all duration-300 hover:scale-105 active:scale-95;
     &:hover {
-      box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+      box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+    }
+  }
+
+  .social-icon {
+    @apply p-3 rounded-full bg-primary/10 text-primary hover:bg-primary/20 
+           transition-all duration-300 hover:scale-110 hover:shadow-lg;
+    &:hover {
+      box-shadow: 0 0 15px rgba(255, 165, 0, 0.3);
     }
   }
 
@@ -181,6 +217,11 @@
   .meteor {
     @apply absolute bg-linear-to-r from-meteors via-meteors to-transparent rounded-full;
     box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.3);
+  }
+
+  .particle {
+    @apply absolute bg-primary/30;
+    box-shadow: 0 0 12px 3px rgba(255, 165, 0, 0.4);
   }
 }
 

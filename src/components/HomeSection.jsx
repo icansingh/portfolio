@@ -1,32 +1,75 @@
-import { ArrowDown } from "lucide-react"
+import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
+import { TypeAnimation } from "react-type-animation"
+import { ParticleBackground } from "./ParticleBackground"
 
 export const HomeSection = () => {
     return <section 
             id="home" 
             className="relative min-h-screen flex flex-col items-center justify-center px-4"
             >
+                {/* Particle Background */}
+                <ParticleBackground />
+                
                 <div className="container max-w-4xl mx-auto text-center z-10">
                     <div className="space-y-6">
-                        <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
-                            <span className="opacity-0 animate-fade-in"> Hi, I'm</span>
-                            <span className="text-primary opacity-0 animate-fade-in-delay-1"> Ikjyot</span>
-                            <span className=" text-gradient opacity-0 animate-fade-in-delay-2"> Singh </span>
-                        </h1>
+                        <div className="flex flex-wrap justify-center items-center gap-2">
+                            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+                                <span className="opacity-0 animate-fade-in"> Hi, I'm</span>
+                                <span className="text-primary opacity-0 animate-fade-in-delay-1"> Ikjyot</span>
+                            </h1>
+                            <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+                                <span className="opacity-0 animate-fade-in-delay-2"> Singh </span>
+                            </h1>
+                        </div>
 
-                        <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-                            I am a crazy talented programmer using tutorials
-                            to create projects and only editing minute things.
-                            I at least learn something lol.
-                        </p>
+                        <div className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
+                            <TypeAnimation
+                                sequence={[
+                                    "I am a crazy talented programmer using tutorials to create projects and only editing minute things. I at least learn something lol.",
+                                    2000,
+                                    "Passionate about AI, Machine Learning, and building innovative solutions that make a difference.",
+                                    2000,
+                                    "Always eager to learn new technologies and take on challenging projects.",
+                                    2000,
+                                ]}
+                                wrapper="p"
+                                speed={50}
+                                repeat={Infinity}
+                                className="min-h-[1.5em]"
+                            />
+                        </div>
 
                         <div className="pt-4 opacity-0 animate-fade-in-delay-4">
-                            <a href="#projects" className="cosmic-button">
-                                View My Work
-                            </a>
+                            <div className="flex justify-center space-x-6">
+                                <a 
+                                    href="https://github.com/icansingh" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="social-icon"
+                                    aria-label="GitHub"
+                                >
+                                    <Github size={24} />
+                                </a>
+                                <a 
+                                    href="https://www.linkedin.com/in/ikjyot-singh/" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                    className="social-icon"
+                                    aria-label="LinkedIn"
+                                >
+                                    <Linkedin size={24} />
+                                </a>
+                                <a 
+                                    href="mailto:ikjyot@ualberta.ca"
+                                    className="social-icon"
+                                    aria-label="Email"
+                                >
+                                    <Mail size={24} />
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-
 
             <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
                 <span className="text-sm text-muted-foreground mb-2"> Scroll </span>
