@@ -13,7 +13,7 @@ export const AboutSection = () => {
                     {/* Profile Image */}
                     <div className="flex justify-center mb-6">
                         <img 
-                            src="/me.heic" 
+                            src="/me.png" 
                             alt="Profile" 
                             className="w-32 h-32 rounded-full object-cover border-4 border-primary shadow-lg"
                         />
