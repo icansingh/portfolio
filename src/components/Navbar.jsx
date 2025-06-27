@@ -10,7 +10,7 @@ const navItems = [
     {name: "Contact", href: "#contact"},
 ]
 
-export const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
+export const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen, activeSection }) => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -63,7 +63,10 @@ export const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen }) => {
                         <a 
                         href={item.href} 
                         key={key} 
-                        className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                        className={cn(
+                            "text-foreground/80 hover:text-primary transition-colors duration-300",
+                            activeSection === item.href.replace('#', '') && "text-primary font-bold"
+                        )}
                         >
                             {item.name}
                         </a>
