@@ -24,12 +24,13 @@ export const Navbar = ({ isMobileMenuOpen, setIsMobileMenuOpen, activeSection })
 
     useEffect(() => {
         const storedTheme = localStorage.getItem("theme");
-        if (storedTheme === "dark") {
-            setIsDarkMode(true);
-            document.documentElement.classList.add("dark");
-        } else {
+        if (storedTheme === "light") {
             setIsDarkMode(false);
             document.documentElement.classList.remove("dark");
+        } else {
+            // Default to dark mode if no theme is stored or if it's "dark"
+            setIsDarkMode(true);
+            document.documentElement.classList.add("dark");
         }
     }, []);
 
