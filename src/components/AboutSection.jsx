@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { Briefcase, Code, User } from "lucide-react";
+import { BrainCircuit, Code, GraduationCap} from "lucide-react";
 
 export const AboutSection = () => {
     return <section id="about" className="py-24 px-4 relative">
@@ -18,21 +18,21 @@ export const AboutSection = () => {
                             className="w-32 h-32 rounded-full object-cover border-4 border-primary shadow-lg"
                         />
                     </div>
-                    <h3 className="text-2xl font-semibold">Passionate Fraudster and Program "Writer"</h3>
+                    <h3 className="text-2xl font-semibold">AI Developer & Computing Science Student</h3>
 
                     <p className="text-muted-foreground">
-                        Boom chakcahdkajendkaf choiisefoijsef fiwoooow
-                        o leifjalekfkjfak have 10 years aekfalef
-                        aedioajedliajedliajedlikaeldk  iajdoaied testtt
-                        tstaefkaed
+                        I'm a Computing Science student at the University of Alberta,
+                        currently working as an AI Developer while conducting
+                        research in computer vision and natural language processing.
+                        My passion lies in developing innovative AI solutions that
+                        solve real-world problems. 
                     </p>
 
                     <p className="text-muted-foreground">
-                        I know this and this and this technologes. Really 
-                        enjoy machine learnign stuff. chickiiediaejdla
-                        diajdlaejd kidjlaejd kj adlkajd aj dksj  laks ddlaksdj
-                        aledj alkdj alkdj lkajed oiaejd ladj alkd laedk lak;
-                        daopek d;oaek d;lakd; aldkpa ed9iape foja;kfk;sr
+                        Whether it's training deep
+                        learning models, building full-stack applications, or
+                        contributing to cutting-edge research, I love the challenge
+                        of turning complex ideas into working solutions.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
@@ -55,11 +55,11 @@ export const AboutSection = () => {
                 <div className="grid grid-cols-1 gap-6">
                     <div className="gradient-border p-6 card-hover">
                         <div className="flex items-start gap-4">
-                            <div className="p-3 rounded-full bg-primary/10">
-                                <Code className="h-6 w-6 text-primary"/>
+                            <div className="p-3 rounded-full bg-primary/10">      
+                                <GraduationCap className="h-6 w-6 text-primary"/>
                             </div>
                             <div className="text-left">
-                                <h4 className="font-semibold text-lg"> Web Development</h4>
+                                <h4 className="font-semibold text-lg"> Education</h4>
                                 <p className="text-muted-foreground">
                                     ayyyyy i can actually code. vow,
                                     boooomaiendlaenklaneflknaeklf
@@ -72,10 +72,10 @@ export const AboutSection = () => {
                     <div className="gradient-border p-6 card-hover">
                         <div className="flex items-start gap-4">
                             <div className="p-3 rounded-full bg-primary/10">
-                                <User className="h-6 w-6 text-primary"/>
+                                <BrainCircuit className="h-6 w-6 text-primary"/>
                             </div>
                             <div className="text-left">
-                                <h4 className="font-semibold text-lg"> UI/UX Design</h4>
+                                <h4 className="font-semibold text-lg"> AI & Machine Learning</h4>
                                 <p className="text-muted-foreground">
                                     I prolly have to change this to something
                                     like AI related, training models, etc. you know stuff
@@ -88,10 +88,10 @@ export const AboutSection = () => {
                     <div className="gradient-border p-6 card-hover">
                         <div className="flex items-start gap-4">
                             <div className="p-3 rounded-full bg-primary/10">
-                                <Briefcase className="h-6 w-6 text-primary"/>
+                                <Code className="h-6 w-6 text-primary"/>
                             </div>
                             <div className="text-left">
-                                <h4 className="font-semibold text-lg"> Project Management</h4>
+                                <h4 className="font-semibold text-lg"> Software Engineering</h4>
                                 <p className="text-muted-foreground">
                                     ayyyyy its done, now once again, need to change this to 
                                     work experience or something like that. Talk about something

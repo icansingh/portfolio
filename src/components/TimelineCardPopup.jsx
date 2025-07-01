@@ -28,28 +28,31 @@ export const TimelineCardPopup = ({ experience, isOpen, onClose }) => {
 
         {/* Experience content */}
         <div className="p-6 md:p-8">
-          {/* Header with year badge */}
+          {/* Header with centered duration badge */}
           <div className="flex items-center justify-between mb-6">
+            <div className="flex-1"></div> {/* Empty space on left */}
             <span className="text-lg font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
-              {experience.year}
+              {experience.duration}
             </span>
-            {experience.link && experience.link !== "#" && (
-              <a 
-                href={experience.link} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-primary hover:text-primary/80 transition-colors flex items-center gap-2"
-              >
-                <ExternalLink size={16} />
-                <span className="text-sm">Visit Company</span>
-              </a>
-            )}
+            <div className="flex-1 flex justify-end"> {/* Container for link on right */}
+              {experience.link && experience.link !== "#" && (
+                <a 
+                  href={experience.link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-primary hover:text-primary/80 transition-colors flex items-center gap-2"
+                >
+                  <ExternalLink size={16} />
+                  <span className="text-sm">Visit Company</span>
+                </a>
+              )}
+            </div>
           </div>
 
           {/* Title and company info */}
           <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">{experience.title}</h2>
           
-          <div className="flex items-center justify-center gap-4 mb-6 text-muted-foreground">
+          <div className="flex items-center justify-center gap-4 mb-3 text-muted-foreground">
             <div className="flex items-center gap-1">
               <Briefcase size={16} />
               <span className="text-sm">{experience.company}</span>
@@ -62,7 +65,7 @@ export const TimelineCardPopup = ({ experience, isOpen, onClose }) => {
 
           {/* Description */}
           <div className="mb-8">
-            <h3 className="text-lg font-semibold mb-4 text-center">Role & Achievements</h3>
+            
             <p className="text-muted-foreground text-lg leading-relaxed">
               {experience.description}
             </p>
@@ -94,16 +97,6 @@ export const TimelineCardPopup = ({ experience, isOpen, onClose }) => {
               ))}
             </div>
           </div>
-
-          {/* Duration */}
-          {experience.duration && (
-            <div className="text-center text-muted-foreground">
-              <div className="flex items-center justify-center gap-1">
-                <Calendar size={16} />
-                <span className="text-sm">{experience.duration}</span>
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </div>

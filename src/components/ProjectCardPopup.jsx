@@ -1,5 +1,6 @@
 import { X, ExternalLink, GithubIcon, Play } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ImageCarousel } from "./ImageCarousel";
 
 // Tech stack icons mapping
 const techIcons = {
@@ -49,12 +50,14 @@ export const ProjectCardPopup = ({ project, isOpen, onClose }) => {
 
         {/* Project image */}
         <div className="relative h-48 md:h-64 overflow-hidden rounded-t-xl">
-          <img 
-            src={project.image} 
-            alt={project.title}
-            className="w-full h-full object-cover"
+          <ImageCarousel 
+            images={project.images} 
+            autoPlay={true}
+            interval={5000}
+            showControls={true}
+            className="h-full"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
         </div>
 
         {/* Project content */}

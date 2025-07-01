@@ -1,8 +1,19 @@
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
 import { TypeAnimation } from "react-type-animation"
 import { ParticleBackground } from "./ParticleBackground"
+import { useState, useEffect } from "react"
 
 export const HomeSection = () => {
+    const [startTyping, setStartTyping] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setStartTyping(true);
+        }, 1500);
+
+        return () => clearTimeout(timer);
+    }, []);
+
     return <section 
             id="home" 
             className="relative min-h-screen flex flex-col items-center justify-center px-4"
@@ -23,20 +34,22 @@ export const HomeSection = () => {
                         </div>
 
                         <div className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-                            <TypeAnimation
-                                sequence={[
-                                    "I am a crazy talented programmer using tutorials to create projects and only editing minute things. I at least learn something lol.",
-                                    2000,
-                                    "Passionate about AI, Machine Learning, and building innovative solutions that make a difference.",
-                                    2000,
-                                    "Always eager to learn new technologies and take on challenging projects.",
-                                    2000,
-                                ]}
-                                wrapper="p"
-                                speed={50}
-                                repeat={Infinity}
-                                className="min-h-[1.5em]"
-                            />
+                            {startTyping ? (
+                                <TypeAnimation
+                                    sequence={[
+                                        "Passionate about AI, Machine Learning, and building innovative solutions that make a difference.",
+                                        2000,
+                                        "Always eager to learn new technologies and take on challenging projects.",
+                                        2000,
+                                    ]}
+                                    wrapper="p"
+                                    speed={50}
+                                    repeat={Infinity}
+                                    className="min-h-[1.5em]"
+                                />
+                            ) : (
+                                <p className="min-h-[1.5em]">&nbsp;</p>
+                            )}
                         </div>
 
                         <div className="pt-4 opacity-0 animate-fade-in-delay-4">

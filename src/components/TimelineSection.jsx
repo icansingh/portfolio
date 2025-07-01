@@ -7,66 +7,51 @@ import { TimelineCardPopup } from "./TimelineCardPopup";
 const timelineData = [
     {
         id: 1,
-        year: "2024",
-        title: "Software Engineer",
-        company: "Tech Company",
-        location: "Edmonton, AB",
-        duration: "Jan 2024 - Present",
-        description: "Leading development of AI-powered applications and machine learning models. Collaborating with cross-functional teams to deliver scalable solutions that impact millions of users.",
+        year: "2025",
+        title: "AI Developer",
+        company: "So Shall We Inc.",
+        location: "Remote - Australia",
+        duration: "Dec 2024 - Present",
+        description: "Built real-time AI tools for Shopify-based commerce.",
         achievements: [
-            "Developed and deployed 3 new AI models improving accuracy by 25%",
-            "Led a team of 4 developers in building a real-time data processing pipeline",
-            "Reduced system latency by 40% through optimization techniques"
+            "Designed and deployed a recommendation engine for ~250 products using TF-IDF and cosine similarity",
+            "Developed a RAG pipeline using AWS Lambda, DynamoDB, and the Shopify API",
+            "Automated monthly product data updates to adapt to evolving user preferences"
         ],
-        skills: ["Python", "React", "AWS", "Machine Learning", "Docker", "Kubernetes"],
+        skills: ["Python", "AWS (Lambda, DynamoDB)", "Shopify API", "Docker", "TF-IDF", "Cosine Similarity", "RAG Pipelines"],
         link: "#"
     },
     {
         id: 2,
-        year: "2023",
-        title: "Research Assistant",
+        year: "2024",
+        title: "Software Developer",
         company: "University of Alberta",
         location: "Edmonton, AB",
-        duration: "May 2023 - Dec 2023",
-        description: "Conducted cutting-edge research in computer vision and deep learning. Published papers on object detection and image processing techniques that advance the field.",
+        duration: "May 2024 - Present",
+        description: "NLP research on semantic processing in Alzheimer's patients.",
         achievements: [
-            "Published 2 papers in top-tier computer vision conferences",
-            "Developed a novel object detection algorithm with 15% better performance",
-            "Mentored 3 undergraduate students in research projects"
+            "Led preprocessing of ~8,000 datapoints across 242 .cha files using Python and Pandas",
+            "Applied cosine similarity to measure semantic distance in verbal fluency responses",
+            "Investigated semantic granularity and embedding models to extract lexical features"
         ],
-        skills: ["Computer Vision", "Deep Learning", "OpenCV", "PyTorch", "TensorFlow"],
+        skills: ["Python", "Pandas", "Natural Language Processing (NLP)", "Cosine Similarity", "Data Preprocessing"],
         link: "#"
     },
     {
         id: 3,
-        year: "2022",
-        title: "Software Developer Intern",
-        company: "Startup Inc.",
-        location: "Remote",
-        duration: "Jun 2022 - Aug 2022",
-        description: "Built full-stack web applications and contributed to product development. Worked with modern JavaScript frameworks and databases to create user-friendly solutions.",
-        achievements: [
-            "Built 2 full-stack applications from concept to deployment",
-            "Improved application performance by 30% through code optimization",
-            "Implemented CI/CD pipeline reducing deployment time by 50%"
-        ],
-        skills: ["JavaScript", "Node.js", "MongoDB", "Git", "Express.js"],
-        link: "#"
-    },
-    {
-        id: 4,
-        year: "2021",
-        title: "Computer Science Student",
+        year: "2024",
+        title: "Computer Vision Research Assistant",
         company: "University of Alberta",
         location: "Edmonton, AB",
-        duration: "Sep 2021 - Apr 2024",
-        description: "Started my journey in computer science, focusing on algorithms, data structures, and software engineering principles. Developed strong foundation in programming and problem-solving.",
+        duration: "May 2024 - Dec 2024",
+        description: "MRI-based classification of learning impairments using deep learning.",
         achievements: [
-            "Maintained 3.8+ GPA throughout the program",
-            "Completed 15+ programming projects across various domains",
-            "Participated in 3 hackathons winning 2 awards"
+            "Built a CNN with Multi-Instance Learning in TensorFlow for patient classification",
+            "Processed over 8,000 3D MRI scans, automating parsing and cropping",
+            "Used SHAP, Grad-CAM, LIME, and Saliency Maps for model explainability",
+            "Regularized model using data augmentation, L2, k-fold, and LOO cross-validation"
         ],
-        skills: ["Java", "C++", "Data Structures", "Algorithms", "Python"],
+        skills: ["TensorFlow", "Python", "Convolutional Neural Networks (CNN)", "Multi-Instance Learning", "SHAP", "Grad-CAM", "LIME", "Data Augmentation"],
         link: "#"
     }
 ];
@@ -139,7 +124,7 @@ export const TimelineSection = () => {
                 </h2>
                 
                 <p className="text-center text-muted-foreground mb-8 md:mb-16 max-w-2xl mx-auto px-4">
-                    A timeline of my professional experience and academic achievements. 
+                    A timeline of my professional and academic experience. 
                     Click on any experience to learn more about my role, achievements, and the technologies I worked with.
                 </p>
 
@@ -205,7 +190,7 @@ export const TimelineSection = () => {
                                     
                                     {/* Content Card */}
                                     <div className={cn(
-                                        "w-5/12 p-6 transition-all duration-500",
+                                        "w-5/12 p-6 transition-all duration-500 relative z-20",
                                         index % 2 === 0 ? "pr-8" : "pl-8"
                                     )}>
                                         <div 
@@ -241,19 +226,19 @@ export const TimelineSection = () => {
                                             )}>
                                                 {item.title}
                                             </h3>
-                                            <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+                                            {/* <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
                                                 <Briefcase size={14} />
                                                 <span>{item.company}</span>
                                                 <span>•</span>
                                                 <MapPin size={14} />
                                                 <span>{item.location}</span>
-                                            </div>
+                                            </div> */}
                                             
                                             {/* Duration */}
-                                            <div className="flex items-center gap-1 text-xs text-muted-foreground mb-3">
+                                            {/* <div className="flex items-center gap-1 text-xs text-muted-foreground mb-3">
                                                 <Calendar size={12} />
                                                 <span>{item.duration}</span>
-                                            </div>
+                                            </div> */}
                                             
                                             {/* Description Preview */}
                                             <p className="text-muted-foreground text-sm mb-4 line-clamp-3">
@@ -379,19 +364,19 @@ export const TimelineSection = () => {
                                         )}>
                                             {item.title}
                                         </h3>
-                                        <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
+                                        {/* <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
                                             <Briefcase size={12} />
                                             <span>{item.company}</span>
                                             <span>•</span>
                                             <MapPin size={12} />
                                             <span>{item.location}</span>
-                                        </div>
+                                        </div> */}
                                         
                                         {/* Duration */}
-                                        <div className="flex items-center gap-1 text-xs text-muted-foreground mb-3">
+                                        {/* <div className="flex items-center gap-1 text-xs text-muted-foreground mb-3">
                                             <Calendar size={10} />
                                             <span>{item.duration}</span>
-                                        </div>
+                                        </div> */}
                                         
                                         {/* Description Preview */}
                                         <p className="text-muted-foreground text-xs mb-3 line-clamp-2">
