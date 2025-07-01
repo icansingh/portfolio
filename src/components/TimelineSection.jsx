@@ -132,19 +132,19 @@ export const TimelineSection = () => {
     }, []);
 
     return (
-        <section id="timeline" ref={sectionRef} className="py-24 px-4 relative bg-secondary/20">
+        <section id="timeline" ref={sectionRef} className="py-12 md:py-24 px-4 relative bg-secondary/20">
             <div className="container mx-auto max-w-6xl">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 text-center">
                     My <span className="text-primary">Journey</span>
                 </h2>
                 
-                <p className="text-center text-muted-foreground mb-16 max-w-2xl mx-auto">
+                <p className="text-center text-muted-foreground mb-8 md:mb-16 max-w-2xl mx-auto px-4">
                     A timeline of my professional experience and academic achievements. 
                     Click on any experience to learn more about my role, achievements, and the technologies I worked with.
                 </p>
 
-                {/* Progress Bar Timeline */}
-                <div className="relative max-w-4xl mx-auto">
+                {/* Desktop Timeline (md and up) */}
+                <div className="hidden md:block relative max-w-4xl mx-auto">
                     {/* Progress Bar Background */}
                     <div 
                         className="absolute top-0 bottom-0 w-1 bg-muted"
@@ -168,8 +168,8 @@ export const TimelineSection = () => {
                     {/* Timeline Items */}
                     <div className="relative">
                         {timelineData.map((item, index) => {
-                            const itemProgress = (index + 1) / timelineData.length;
-                            const isActive = scrollProgress >= itemProgress * 0.8;
+                            const itemCenter = (index + 0.5) / timelineData.length;
+                            const isActive = scrollProgress >= itemCenter;
                             
                             return (
                                 <div 
@@ -181,7 +181,6 @@ export const TimelineSection = () => {
                                     style={{
                                         marginTop: index > 0 ? '-9rem' : '0'
                                     }}
-
                                 >
                                     {/* Timeline Dot */}
                                     <div 
@@ -196,7 +195,6 @@ export const TimelineSection = () => {
                                             top: '50%',
                                             marginLeft: '-11px',
                                             marginTop: '-12px',
-                                            
                                         }}
                                     >
                                         {/* Inner dot for extra effect */}
@@ -288,6 +286,143 @@ export const TimelineSection = () => {
                                             <div className="mt-4 text-xs text-primary/70 text-center">
                                                 Click to learn more →
                                             </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            );
+                        })}
+                    </div>
+                </div>
+
+                {/* Mobile Timeline (below md) */}
+                <div className="md:hidden relative max-w-2xl mx-auto">
+                    {/* Mobile Progress Bar Background */}
+                    <div 
+                        className="absolute top-0 bottom-0 w-1 bg-muted"
+                        style={{
+                            left: '1rem',
+                        }}
+                    ></div>
+                    
+                    {/* Mobile Progress Bar Fill */}
+                    <div 
+                        className="absolute top-0 w-1 bg-gradient-to-b from-primary to-primary/50"
+                        style={{ 
+                            left: '1rem',
+                            height: `${scrollProgress * 100}%`,
+                            transition: 'height 0.05s linear'
+                        }}
+                    ></div>
+                    
+                    {/* Mobile Timeline Items */}
+                    <div className="relative pl-12">
+                        {timelineData.map((item, index) => {
+                            const itemCenter = (index + 0.5) / timelineData.length;
+                            const isActive = scrollProgress >= itemCenter;
+                            
+                            return (
+                                <div 
+                                    key={item.id}
+                                    className="relative mb-8 last:mb-0"
+                                >
+                                    {/* Mobile Timeline Dot */}
+                                    <div 
+                                        className={cn(
+                                            "absolute w-5 h-5 rounded-full border-3 border-background shadow-lg z-10 transition-all duration-500",
+                                            isActive 
+                                                ? "bg-primary scale-110 shadow-primary/50" 
+                                                : "bg-muted"
+                                        )}
+                                        style={{
+                                            left: '-2.5rem',
+                                            top: '50%',
+                                            transform: 'translateY(-50%)',
+                                        }}
+                                    >
+                                        {/* Inner dot for extra effect */}
+                                        {isActive && (
+                                            <div className="absolute inset-1 bg-primary rounded-full animate-pulse"></div>
+                                        )}
+                                    </div>
+                                    
+                                    {/* Mobile Content Card */}
+                                    <div 
+                                        className={cn(
+                                            "gradient-border p-4 cursor-pointer transition-all duration-300 hover:bg-primary/5 hover:scale-[1.02] hover:shadow-lg group",
+                                            isActive && "border-primary/30"
+                                        )}
+                                        style={{
+                                            opacity: isActive ? 1 : 0.3,
+                                            transform: isActive ? 'scale(1)' : 'scale(0.95)'
+                                        }}
+                                        onClick={() => handleExperienceClick(item)}
+                                    >
+                                        {/* Year Badge */}
+                                        <div className="flex items-center justify-between mb-3">
+                                            <span className={cn(
+                                                "text-xs font-medium px-2 py-1 rounded-full transition-all duration-300",
+                                                isActive 
+                                                    ? "text-primary bg-primary/10" 
+                                                    : "text-muted-foreground bg-muted"
+                                            )}>
+                                                {item.year}
+                                            </span>
+                                            {item.link && item.link !== "#" && (
+                                                <ExternalLink size={14} className="text-muted-foreground group-hover:text-primary transition-colors" />
+                                            )}
+                                        </div>
+                                        
+                                        {/* Title and Company */}
+                                        <h3 className={cn(
+                                            "font-semibold text-base mb-2 group-hover:text-primary transition-colors",
+                                            isActive ? "text-foreground" : "text-muted-foreground"
+                                        )}>
+                                            {item.title}
+                                        </h3>
+                                        <div className="flex items-center gap-2 text-xs text-muted-foreground mb-2">
+                                            <Briefcase size={12} />
+                                            <span>{item.company}</span>
+                                            <span>•</span>
+                                            <MapPin size={12} />
+                                            <span>{item.location}</span>
+                                        </div>
+                                        
+                                        {/* Duration */}
+                                        <div className="flex items-center gap-1 text-xs text-muted-foreground mb-3">
+                                            <Calendar size={10} />
+                                            <span>{item.duration}</span>
+                                        </div>
+                                        
+                                        {/* Description Preview */}
+                                        <p className="text-muted-foreground text-xs mb-3 line-clamp-2">
+                                            {item.description}
+                                        </p>
+                                        
+                                        {/* Skills Preview */}
+                                        <div className="flex flex-wrap gap-1">
+                                            {item.skills.slice(0, 3).map((skill, skillIndex) => (
+                                                <span 
+                                                    key={skillIndex}
+                                                    className={cn(
+                                                        "text-xs px-1.5 py-0.5 rounded-full transition-all duration-300",
+                                                        isActive 
+                                                            ? "bg-primary/10 text-primary" 
+                                                            : "bg-muted text-muted-foreground"
+                                                    )}
+                                                >
+                                                    {skill}
+                                                </span>
+                                            ))}
+                                            {item.skills.length > 3 && (
+                                                <span className="text-xs text-muted-foreground px-1.5 py-0.5">
+                                                    +{item.skills.length - 3} more
+                                                </span>
+                                            )}
+                                        </div>
+                                        
+                                        {/* Click indicator */}
+                                        <div className="mt-3 text-xs text-primary/70 text-center">
+                                            Tap to learn more →
                                         </div>
                                     </div>
                                 </div>
