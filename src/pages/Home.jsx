@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { AboutSection } from "../components/AboutSection";
+import { TimelineSection } from "../components/TimelineSection";
 import { ContactSection } from "../components/ContactSection";
 import { Footer } from "../components/Footer";
 import { HomeSection } from "../components/HomeSection";
@@ -9,7 +10,7 @@ import { SkillsSection } from "../components/SkillsSection";
 import { StarBackground } from "../components/StarBackground";
 import { MobileMenuOverlay } from "../components/MobileMenuOverlay";
 
-const sectionIds = ["home", "about", "skills", "projects", "contact"];
+const sectionIds = ["home", "about", "timeline", "skills", "projects", "contact"];
 
 export const Home = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -53,6 +54,7 @@ export const Home = () => {
     <main>
         <HomeSection />
         <AboutSection />
+        <TimelineSection />
         <SkillsSection />
         <ProjectsSection />
         <ContactSection />
