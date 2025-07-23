@@ -6,6 +6,18 @@ import { ImageCarousel } from "./ImageCarousel";
 const projects = [
     {
         id: 1,
+        title: "Marvel Movie Bot",
+        description: "A Marvel chatbot using RAG and LLaMA that answers questions and roleplays as Jarvis, Hulk, Captain America, or Black Panther.",
+        longDescription: "This Marvel-themed chatbot uses a Retrieval-Augmented Generation (RAG) pipeline connected to a vector store containing scripts from 19 Marvel movies (sourced from Kaggle). Powered by a local LLaMA model via Ollama, it can answer detailed, contextual questions about the Marvel Cinematic Universe. It also features a character mode, allowing users to receive responses styled after Jarvis, Captain America, Hulk, or Black Panther. The backend was developed using Python and FastAPI, exposed via ngrok, with a React frontend deployed on Vercel.",
+        images: [
+            "/Projects/soccer_analysis_system.png"
+        ],
+        tags: ["Python", "OpenCV", "YOLO"],
+        demoURL: "link",
+        githubURL: "https://github.com/icansingh/Soccer-Analysis-System"
+    },
+    {
+        id: 2,
         title: "Soccer Analysis System",
         description: "A soccer analysis tool that uses machine learning to track a game in real time",
         longDescription: "A comprehensive soccer analysis tool that uses machine learning and computer vision to track games in real-time. The system provides detailed player movement analysis, ball tracking, and tactical insights for coaches and analysts. Built with Python, OpenCV, and YOLO object detection, this project demonstrates advanced computer vision techniques applied to sports analytics.",
@@ -17,7 +29,7 @@ const projects = [
         githubURL: "https://github.com/icansingh/Soccer-Analysis-System"
     },
     {
-        id: 2,
+        id: 3,
         title: "Mind Pilot",
         description: "Human-Computer Interface using EEG Signals",
         longDescription: "An innovative Human-Computer Interface that uses EEG signals to control applications. This project combines neuroscience and technology to create a new way of interacting with computers through brain signals. The system processes real-time EEG data using active reinforcement learning algorithms to interpret user intentions and translate them into computer commands. This breakthrough technology opens up new possibilities for accessibility and human-computer interaction.",
@@ -31,10 +43,24 @@ const projects = [
         githubURL: "https://github.com/Arber-Shala/mind-pilot"
     },
     {
-        id: 3,
+        id: 4,
         title: "Fly Chicken Fly!",
         description: "A platformer game built in Unity",
         longDescription: "A charming platformer game built in Unity featuring a chicken protagonist. The game includes custom audio design, smooth animations, and engaging gameplay mechanics that provide hours of entertainment. Players navigate through various levels, collect items, and overcome obstacles while enjoying the whimsical art style and responsive controls. The project showcases game development skills including C# programming, Unity engine mastery, and audio design principles.",
+        images: [
+            "/Projects/fly_chicken_fly.png",
+            "/Projects/project3.jpg",
+            "/Projects/project1.jpg"
+        ],
+        tags: ["Unity", "C#", "Audio Design"],
+        demoURL: "link",
+        githubURL: "https://github.com/Project250-SkyForm/Fly-Chicken-Fly"
+    },
+    {
+        id: 4,
+        title: "Event Management App",
+        description: "An event management app with check-ins, custom event creation, and real-time notifications, built in a team using SCRUM.",
+        longDescription: "QrazyQRsRUs is a full-featured event management application that allows users to discover, attend, and create events. The platform supports check-ins, event browsing, and user-specific event management. Built collaboratively in a team setting using the SCRUM framework, I contributed to designing and implementing the real-time notification system using Firestore’s notification features. I also wrote unit tests and helped validate the overall system functionality through end-to-end testing. The project was presented successfully and received an excellent grade.",
         images: [
             "/Projects/fly_chicken_fly.png",
             "/Projects/project3.jpg",
