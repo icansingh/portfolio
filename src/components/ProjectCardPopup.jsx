@@ -9,7 +9,7 @@ const techIcons = {
   "YOLO": "🤖",
   "Unity": "🎮",
   "C#": "💎",
-  "Audio Design": "🎵",
+  "Audio Design": "🎵", 
   "Active Reinforcement Learning": "🧠",
   "React": "⚛️",
   "JavaScript": "📜",
