@@ -46,7 +46,7 @@ export const ImageCarousel = ({
                         src={image}
                         alt={`Project image ${index + 1}`}
                         className={cn(
-                            "absolute inset-0 w-full h-full object-cover transition-opacity duration-500",
+                            "absolute inset-0 w-full h-full object-cover transition-opacity duration-3000",
                             index === currentIndex ? "opacity-100" : "opacity-0"
                         )}
                         onClick={onClick}

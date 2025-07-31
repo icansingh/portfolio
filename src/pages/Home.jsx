@@ -10,7 +10,7 @@ import { SkillsSection } from "../components/SkillsSection";
 import { StarBackground } from "../components/StarBackground";
 import { MobileMenuOverlay } from "../components/MobileMenuOverlay";
 
-const sectionIds = ["home", "about", "timeline", "skills", "projects", "contact"];
+const sectionIds = ["home", "about", "timeline", "projects", "skills", "contact"];
 
 export const Home = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -55,8 +55,8 @@ export const Home = () => {
         <HomeSection />
         <AboutSection />
         <TimelineSection />
-        <SkillsSection />
         <ProjectsSection />
+        <SkillsSection />
         <ContactSection />
     </main>
 

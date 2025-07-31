@@ -10,7 +10,8 @@ const projects = [
         description: "A Marvel chatbot using RAG and LLaMA that answers questions and roleplays as Jarvis, Hulk, Captain America, or Black Panther.",
         longDescription: "This Marvel-themed chatbot uses a Retrieval-Augmented Generation (RAG) pipeline connected to a vector store containing scripts from 19 Marvel movies (sourced from Kaggle). Powered by a local LLaMA model via Ollama, it can answer detailed, contextual questions about the Marvel Cinematic Universe. It also features a character mode, allowing users to receive responses styled after Jarvis, Captain America, Hulk, or Black Panther. The backend was developed using Python and FastAPI, exposed via ngrok, with a React frontend deployed on Vercel.",
         images: [
-            "/Projects/soccer_analysis_system.png"
+            "/Projects/marvel_movie_bot/image_1.png",
+            "/Projects/marvel_movie_bot/image_2.png"
         ],
         tags: ["Python", "OpenCV", "YOLO"],
         demoURL: "link",
@@ -22,7 +23,7 @@ const projects = [
         description: "A soccer analysis tool that uses YOLO and OpenCV to track players and calculate live stats like speed and possession.",
         longDescription: "This soccer analysis system uses YOLO for real-time object detection and OpenCV for visual tracking and annotation. It identifies all players on the field, marks them with circular overlays, highlights the player in possession with a pointer, and tracks the ball itself. The system also computes dynamic match statistics, including player positions, speeds, and possession metrics.",
         images: [
-            "/Projects/soccer_analysis_system.png"
+            "/Projects/soccer_analysis_system/image_1.png"
         ],
         tags: ["Python", "OpenCV", "YOLO"],
         demoURL: "link",
@@ -34,9 +35,9 @@ const projects = [
         description: "A neurotech hackathon project that maps facial movements and EEG signals to mouse controls.",
         longDescription: "Mind Pilot is a human-computer interface developed for Nathacks, a neurotech-focused hackathon. The system combines real-time reinforcement learning with facial and EEG signal processing to allow users to control a computer using only their nose and eyebrow movements. Using the Hecatron library, we trained an agent to recognize EEG patterns (such as an eyebrow raise) as a mouse click. The model trains in minutes, enabling users to customize which EEG signals correspond to specific actions. OpenCV was used to track the nose as a mouse pointer.",
         images: [
-            "/Projects/project2.jpg",
-            "/Projects/project1.jpg",
-            "/Projects/project3.jpg"
+            "/Projects/mind_pilot/image_1.png",
+            "/Projects/mind_pilot/image_2.png",
+            "/Projects/mind_pilot/image_3.jpg"
         ],
         tags: ["Python", "Active Reinforcement Learning", "OpenCV"],
         demoURL: "https://devpost.com/software/eye-pilot",
@@ -48,12 +49,12 @@ const projects = [
         description: "A Unity-based platformer game with award-winning audio design and collaborative gameplay development.",
         longDescription: "This platformer game was developed as part of a course project and deployed on Itch.io. Built in Unity using C#, it was a collaborative team effort where I led the audio design and implementation. I created, edited, and integrated all in-game sound effects and background music using Audacity and Logic Pro. I also contributed to the development of core gameplay mechanics. Our game received an award for Best Audio Design, standing out among all games in the course.",
         images: [
-            "/Projects/fly_chicken_fly.png",
-            "/Projects/project3.jpg",
-            "/Projects/project1.jpg"
+            "/Projects/fly_chicken_fly/image_1.png",
+            "/Projects/fly_chicken_fly/image_2.png",
+            "/Projects/fly_chicken_fly/image_3.png"
         ],
         tags: ["Unity", "C#", "Audio Design"],
-        demoURL: "link",
+        demoURL: "https://saveqaq.itch.io/gold-release",
         githubURL: "https://github.com/Project250-SkyForm/Fly-Chicken-Fly"
     },
     {
@@ -62,9 +63,8 @@ const projects = [
         description: "An event management app with check-ins, custom event creation, and real-time notifications",
         longDescription: "QrazyQRsRUs is a full-featured event management application that allows users to discover, attend, and create events. The platform supports check-ins, event browsing, and user-specific event management. Built collaboratively in a team setting using the SCRUM framework, I contributed to designing and implementing the real-time notification system using Firestore’s notification features. I also wrote unit tests and helped validate the overall system functionality through end-to-end testing. The project was presented successfully and received an excellent grade.",
         images: [
-            "/Projects/fly_chicken_fly.png",
-            "/Projects/project3.jpg",
-            "/Projects/project1.jpg"
+            "/Projects/event_management_app/image_1.png",
+            "/Projects/event_management_app/image_2.png"
         ],
         tags: ["Unity", "C#", "Audio Design"],
         demoURL: "link",
@@ -76,8 +76,7 @@ const projects = [
         description: "A personal portfolio website built with React and Tailwind, featuring a timeline, contact form, and fun animations.",
         longDescription: "This is my personal portfolio website, originally inspired by a YouTube tutorial from PedroTech but significantly enhanced with a custom UI and added features. I introduced a professional timeline section to showcase my experience, a functioning contact form integrated with EmailJS for real-time message handling, and a unique visual flair with interactive supernovae explosion effects. The project is built with React and styled using Tailwind CSS, with a focus on responsiveness and smooth user experience.",
         images: [
-            "/Projects/project3.jpg",
-            "/Projects/project1.jpg"
+            "/Projects/portfolio/image_1.png",
         ],
         tags: ["React", "Tailwind CSS", "EmailJS", "Vercel"],
         demoURL: "link",
@@ -122,7 +121,7 @@ export const ProjectsSection = () => {
                                 <ImageCarousel 
                                     images={project.images} 
                                     autoPlay={true}
-                                    interval={4000}
+                                    interval={5000}
                                     showControls={false}
                                     className="h-full"
                                     onClick={() => handleProjectClick(project)}
