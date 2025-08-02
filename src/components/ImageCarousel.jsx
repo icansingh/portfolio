@@ -9,7 +9,8 @@ export const ImageCarousel = ({
     showControls = false,
     showCounter = false,
     className = "",
-    onClick = null 
+    onClick = null,
+    transitionDuration = 500  // New prop with default 500ms
 }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -46,7 +47,8 @@ export const ImageCarousel = ({
                         src={image}
                         alt={`Project image ${index + 1}`}
                         className={cn(
-                            "absolute inset-0 w-full h-full object-cover transition-opacity duration-3000",
+                            "absolute inset-0 w-full h-full object-cover",
+                            `transition-opacity duration-${transitionDuration}`,
                             index === currentIndex ? "opacity-100" : "opacity-0"
                         )}
                         onClick={onClick}

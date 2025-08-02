@@ -1,4 +1,4 @@
-import { X, ExternalLink, GithubIcon, Play } from "lucide-react";
+import { X, ExternalLink, GithubIcon, Play, Link } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ImageCarousel } from "./ImageCarousel";
 
@@ -56,6 +56,7 @@ export const ProjectCardPopup = ({ project, isOpen, onClose }) => {
             interval={5000}
             showControls={true}
             className="h-full"
+            transitionDuration={1000}  
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
         </div>
@@ -73,9 +74,8 @@ export const ProjectCardPopup = ({ project, isOpen, onClose }) => {
             <h3 className="text-lg font-semibold mb-4 text-center">Tech Stack</h3>
             <div className="flex flex-wrap gap-3 justify-center">
               {project.tags.map((tag, index) => (
-                <div key={index} className="flex items-center gap-2 px-3 py-2 bg-primary/10 rounded-full">
-                  <span className="text-lg">{techIcons[tag] || "🔧"}</span>
-                  <span className="text-sm font-medium">{tag}</span>
+                <div key={index} className="px-3 py-2 bg-primary/10 rounded-full">
+                  <span className="text-sm font-medium text-primary">{tag}</span>
                 </div>
               ))}
             </div>
@@ -83,21 +83,39 @@ export const ProjectCardPopup = ({ project, isOpen, onClose }) => {
 
           {/* Action buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href={project.demoURL === "link" ? "#" : project.demoURL}
-              target={project.demoURL === "link" ? "_self" : "_blank"}
-              rel={project.demoURL === "link" ? "" : "noopener noreferrer"}
-              className={cn(
-                "cosmic-button flex items-center justify-center gap-2",
-                project.demoURL === "link" && "opacity-50 cursor-not-allowed"
-              )}
-              onClick={project.demoURL === "link" ? (e) => e.preventDefault() : undefined}
-              title={project.demoURL === "link" ? "Demo coming soon!" : "View live demo"}
-            >
-              <Play size={16} />
-              {project.demoURL === "link" ? "Demo Coming Soon" : "Live Demo"}
-            </a>
+            {/* Link Button - only show if linkURL is not "N/A" */}
+            {project.linkURL && project.linkURL !== "N/A" && (
+              <a
+                href={project.linkURL}
+                target={project.linkURL.startsWith("#") ? "_self" : "_blank"}
+                rel={project.linkURL.startsWith("#") ? "" : "noopener noreferrer"}
+                className="cosmic-button flex items-center justify-center gap-2"
+                title="View project"
+              >
+                <Link size={16} />
+                View Project
+              </a>
+            )}
+
+            {/* Demo Button - only show if demoURL is not "N/A" */}
+            {project.demoURL && project.demoURL !== "N/A" && (
+              <a
+                href={project.demoURL === "link" ? "#" : project.demoURL}
+                target={project.demoURL === "link" ? "_self" : "_blank"}
+                rel={project.demoURL === "link" ? "" : "noopener noreferrer"}
+                className={cn(
+                  "cosmic-button flex items-center justify-center gap-2",
+                  project.demoURL === "link" && "opacity-50 cursor-not-allowed"
+                )}
+                onClick={project.demoURL === "link" ? (e) => e.preventDefault() : undefined}
+                title={project.demoURL === "link" ? "Demo coming soon!" : "View live demo"}
+              >
+                <Play size={16} />
+                {project.demoURL === "link" ? "Demo Coming Soon" : "Live Demo"}
+              </a>
+            )}
             
+            {/* GitHub Button */}
             {project.githubURL && (
               <a
                 href={project.githubURL}

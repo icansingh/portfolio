@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { BrainCircuit, Code, GraduationCap} from "lucide-react";
+import { BrainCircuit, Code, Gamepad2, GraduationCap, MessageCircleMore, Speech} from "lucide-react";
 
 export const AboutSection = () => {
     return <section id="about" className="py-24 px-4 relative">
@@ -60,11 +60,9 @@ export const AboutSection = () => {
                             </div>
                             <div className="text-left">
                                 <h4 className="font-semibold text-lg"> Education</h4>
-                                <p className="text-muted-foreground">
-                                    ayyyyy i can actually code. vow,
-                                    boooomaiendlaenklaneflknaeklf
-                                    aejfknalefknalekfnlkaef
-                                    aekfnalekflakefnlkenflkaneflknaelkfnalekfn
+                                <p className="text-muted-foreground"> 
+                                Pursuing a B.Sc. in Computing Science at the University of Alberta. {/* with a 3.7 GPA - should i mention GPA?*/}
+                                Focused on AI, computer vision, NLP, and cybersecurity.
                                 </p>
                             </div>
                         </div>
@@ -72,15 +70,12 @@ export const AboutSection = () => {
                     <div className="gradient-border p-6 card-hover">
                         <div className="flex items-start gap-4">
                             <div className="p-3 rounded-full bg-primary/10">
-                                <BrainCircuit className="h-6 w-6 text-primary"/>
+                                <Gamepad2 className="h-6 w-6 text-primary"/>
                             </div>
                             <div className="text-left">
-                                <h4 className="font-semibold text-lg"> AI & Machine Learning</h4>
+                                <h4 className="font-semibold text-lg"> Interests </h4>
                                 <p className="text-muted-foreground">
-                                    I prolly have to change this to something
-                                    like AI related, training models, etc. you know stuff
-                                    like that. bioaejdfoajeif
-                                    aedikaerae
+                                I enjoy sim racing, movies, TV shows, and playing guitar — a mix of speed, story, and sound.
                                 </p>
                             </div>
                         </div>
@@ -88,14 +83,13 @@ export const AboutSection = () => {
                     <div className="gradient-border p-6 card-hover">
                         <div className="flex items-start gap-4">
                             <div className="p-3 rounded-full bg-primary/10">
-                                <Code className="h-6 w-6 text-primary"/>
+                                <MessageCircleMore className="h-6 w-6 text-primary"/>
                             </div>
                             <div className="text-left">
-                                <h4 className="font-semibold text-lg"> Software Engineering</h4>
+                                <h4 className="font-semibold text-lg"> Soft Skills</h4>
                                 <p className="text-muted-foreground">
-                                    ayyyyy its done, now once again, need to change this to 
-                                    work experience or something like that. Talk about something
-                                    like that. booooom yeah.
+                                Strong in communication, teamwork, and critical thinking.
+                                Experienced in research and SCRUM-based development.
                                 </p>
                             </div>
                         </div>

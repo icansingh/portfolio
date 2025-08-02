@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowRight, ExternalLink, GithubIcon } from "lucide-react";
+import { ArrowRight, ExternalLink, GithubIcon, Link, Play } from "lucide-react";
 import { ProjectCardPopup } from "./ProjectCardPopup";
 import { ImageCarousel } from "./ImageCarousel";
 
@@ -14,7 +14,8 @@ const projects = [
             "/Projects/marvel_movie_bot/image_2.png"
         ],
         tags: ["Python", "OpenCV", "YOLO"],
-        demoURL: "link",
+        linkURL: "https://marvel-movie-bot.vercel.app",
+        demoURL: "N/A",
         githubURL: "https://github.com/icansingh/Soccer-Analysis-System"
     },
     {
@@ -26,6 +27,7 @@ const projects = [
             "/Projects/soccer_analysis_system/image_1.png"
         ],
         tags: ["Python", "OpenCV", "YOLO"],
+        linkURL: "N/A",
         demoURL: "link",
         githubURL: "https://github.com/icansingh/Soccer-Analysis-System"
     },
@@ -40,6 +42,7 @@ const projects = [
             "/Projects/mind_pilot/image_3.jpg"
         ],
         tags: ["Python", "Active Reinforcement Learning", "OpenCV"],
+        linkURL: "N/A",
         demoURL: "https://devpost.com/software/eye-pilot",
         githubURL: "https://github.com/Arber-Shala/mind-pilot"
     },
@@ -54,11 +57,12 @@ const projects = [
             "/Projects/fly_chicken_fly/image_3.png"
         ],
         tags: ["Unity", "C#", "Audio Design"],
-        demoURL: "https://saveqaq.itch.io/gold-release",
+        linkURL: "https://saveqaq.itch.io/gold-release",
+        demoURL: "N/A",
         githubURL: "https://github.com/Project250-SkyForm/Fly-Chicken-Fly"
     },
     {
-        id: 4,
+        id: 5,
         title: "Event Management App",
         description: "An event management app with check-ins, custom event creation, and real-time notifications",
         longDescription: "QrazyQRsRUs is a full-featured event management application that allows users to discover, attend, and create events. The platform supports check-ins, event browsing, and user-specific event management. Built collaboratively in a team setting using the SCRUM framework, I contributed to designing and implementing the real-time notification system using Firestore’s notification features. I also wrote unit tests and helped validate the overall system functionality through end-to-end testing. The project was presented successfully and received an excellent grade.",
@@ -67,11 +71,12 @@ const projects = [
             "/Projects/event_management_app/image_2.png"
         ],
         tags: ["Unity", "C#", "Audio Design"],
+        linkURL: "N/A",
         demoURL: "link",
         githubURL: "https://github.com/Project250-SkyForm/Fly-Chicken-Fly"
     },
     {
-        id: 5,
+        id: 6,
         title: "Portfolio",
         description: "A personal portfolio website built with React and Tailwind, featuring a timeline, contact form, and fun animations.",
         longDescription: "This is my personal portfolio website, originally inspired by a YouTube tutorial from PedroTech but significantly enhanced with a custom UI and added features. I introduced a professional timeline section to showcase my experience, a functioning contact form integrated with EmailJS for real-time message handling, and a unique visual flair with interactive supernovae explosion effects. The project is built with React and styled using Tailwind CSS, with a focus on responsiveness and smooth user experience.",
@@ -79,8 +84,9 @@ const projects = [
             "/Projects/portfolio/image_1.png",
         ],
         tags: ["React", "Tailwind CSS", "EmailJS", "Vercel"],
-        demoURL: "link",
-        githubURL: "https://github.com/Project250-SkyForm/Fly-Chicken-Fly"
+        linkURL: "#home",
+        demoURL: "N/A",
+        githubURL: "https://github.com/icansingh/portfolio"
     },
 ];
 
@@ -124,6 +130,7 @@ export const ProjectsSection = () => {
                                     interval={5000}
                                     showControls={false}
                                     className="h-full"
+                                    transitionDuration={3000} 
                                     onClick={() => handleProjectClick(project)}
                                 />
                             </div>
@@ -144,14 +151,31 @@ export const ProjectsSection = () => {
 
                                 <div className="flex justify-center">
                                     <div className="flex space-x-3">
-                                        {project.demoURL && project.demoURL !== "link" && (
+                                        {project.linkURL && project.linkURL !== "N/A" && (
                                             <a 
-                                                href={project.demoURL} 
+                                                href={project.linkURL} 
                                                 className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                                                target="_blank"
+                                                target={project.linkURL.startsWith("#") ? "_self" : "_blank"}
                                                 onClick={(e) => e.stopPropagation()}
+                                                title="View Project"
                                             >
-                                                <ExternalLink size={20}/>
+                                                <Link size={20}/>
+                                            </a>
+                                        )}
+                                        {project.demoURL && project.demoURL !== "N/A" && (
+                                            <a 
+                                                href={project.demoURL === "link" ? "#" : project.demoURL} 
+                                                className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                                                target={project.demoURL === "link" ? "_self" : "_blank"}
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    if (project.demoURL === "link") {
+                                                        e.preventDefault();
+                                                    }
+                                                }}
+                                                title={project.demoURL === "link" ? "Demo coming soon!" : "Live Demo"}
+                                            >
+                                                <Play size={20}/>
                                             </a>
                                         )}
                                         <a 
@@ -159,6 +183,7 @@ export const ProjectsSection = () => {
                                             className="text-foreground/80 hover:text-primary transition-colors duration-300"
                                             target="_blank"
                                             onClick={(e) => e.stopPropagation()}
+                                            title="View Code"
                                         >
                                             <GithubIcon size={20}/>
                                         </a>
