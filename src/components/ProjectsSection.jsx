@@ -144,7 +144,7 @@ export const ProjectsSection = () => {
                                     ))}
                                 </div>
 
-                                <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
+                                <h3 className="text-xl font-semibold mb-1 group-hover:text-primary transition-colors duration-300">{project.title}</h3>
                                 <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
                                     {project.description}
                                 </p>
