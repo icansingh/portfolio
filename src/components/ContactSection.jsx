@@ -51,7 +51,7 @@ export const ContactSection = () => {
 
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
                 I'm currently looking for new opportunities. Whether you have a question, 
-                a project in mind, or just want to say hi, I'll do my best to get back to you!
+                a project in mind, or just want to say hi, I'll do my best to get back to you promptly!
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

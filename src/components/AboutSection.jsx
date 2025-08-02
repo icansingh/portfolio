@@ -24,11 +24,12 @@ export const AboutSection = () => {
                         I'm a Computing Science student at the University of Alberta,
                         currently working as an AI Developer while conducting
                         research in computer vision and natural language processing.
-                        My passion lies in developing innovative AI solutions that
-                        solve real-world problems. 
+                        
                     </p>
 
                     <p className="text-muted-foreground">
+                        My passion lies in developing innovative AI solutions that
+                        solve real-world problems. 
                         Whether it's training deep
                         learning models, building full-stack applications, or
                         contributing to cutting-edge research, I love the challenge
@@ -75,7 +76,7 @@ export const AboutSection = () => {
                             <div className="text-left">
                                 <h4 className="font-semibold text-lg"> Interests </h4>
                                 <p className="text-muted-foreground">
-                                I enjoy sim racing, movies, TV shows, and playing guitar — a mix of speed, story, and sound.
+                                I enjoy a mix of speed, story, and sound through sim racing, movies, TV shows, and playing guitar.
                                 </p>
                             </div>
                         </div>
