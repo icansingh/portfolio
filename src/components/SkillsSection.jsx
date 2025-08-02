@@ -10,6 +10,8 @@ import TailwindcssOriginal from 'devicons-react/icons/TailwindcssOriginal';
 import JavascriptOriginal from 'devicons-react/icons/JavascriptOriginal';
 import ReactOriginal from 'devicons-react/icons/ReactOriginal';
 
+import COriginal from 'devicons-react/icons/COriginal';
+import CsharpOriginal from 'devicons-react/icons/CsharpOriginal';
 import JavaOriginal from 'devicons-react/icons/JavaOriginal';
 import JunitOriginal from 'devicons-react/icons/JunitOriginal';
 
@@ -43,6 +45,8 @@ const skillIcons = {
     "Python": PythonOriginal,
     "Java": JavaOriginal,
     "JavaScript": JavascriptOriginal,
+    "C": COriginal,
+    "C#": CsharpOriginal,
     "HTML/CSS": Html5Original,
     "React.js": ReactOriginal,
     "GitHub": Github,
@@ -87,7 +91,8 @@ const skills = [
     // Backend
     {name: "Python", level: 95, category: "backend"},
     {name: "Java", level: 13, category: "backend"},
-    
+    {name: "C", level: 13, category: "backend"},
+    {name: "C#", level: 13, category: "backend"},
     {name: "REST APIs", level: 95, category: "backend"},
     {name: "RAG Pipelines", level: 95, category: "backend"},
     {name: "JUnit", level: 95, category: "backend"},
