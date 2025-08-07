@@ -48,6 +48,19 @@ const projects = [
     },
     {
         id: 4,
+        title: "Portfolio",
+        description: "A personal portfolio website built with React and Tailwind, featuring a timeline, contact form, and fun animations.",
+        longDescription: "This is my personal portfolio website, originally inspired by a YouTube tutorial from PedroTech but significantly enhanced with a custom UI and added features. I introduced a professional timeline section to showcase my experience, a functioning contact form integrated with EmailJS for real-time message handling, and a unique visual flair with interactive supernovae explosion effects. The project is built with React and styled using Tailwind CSS, with a focus on responsiveness and smooth user experience.",
+        images: [
+            "/Projects/portfolio/image_1.png",
+        ],
+        tags: ["React", "Tailwind CSS", "EmailJS", "Vercel"],
+        linkURL: "#home",
+        demoURL: "N/A",
+        githubURL: "https://github.com/icansingh/portfolio"
+    },
+    {
+        id: 5,
         title: "Fly Chicken Fly!",
         description: "A Unity-based platformer game with award-winning audio design and collaborative gameplay development.",
         longDescription: "This platformer game was developed as part of a course project and deployed on Itch.io. Built in Unity using C#, it was a collaborative team effort where I led the audio design and implementation. I created, edited, and integrated all in-game sound effects and background music using Audacity and Logic Pro. I also contributed to the development of core gameplay mechanics. Our game received an award for Best Audio Design, standing out among all games in the course.",
@@ -62,7 +75,7 @@ const projects = [
         githubURL: "https://github.com/Project250-SkyForm/Fly-Chicken-Fly"
     },
     {
-        id: 5,
+        id: 6,
         title: "Event Management App",
         description: "An event management app with check-ins, custom event creation, and real-time notifications",
         longDescription: "QrazyQRsRUs is a full-featured event management application that allows users to discover, attend, and create events. The platform supports check-ins, event browsing, and user-specific event management. Built collaboratively in a team setting using the SCRUM framework, I contributed to designing and implementing the real-time notification system using Firestore’s notification features. I also wrote unit tests and helped validate the overall system functionality through end-to-end testing. The project was presented successfully and received an excellent grade.",
@@ -74,20 +87,7 @@ const projects = [
         linkURL: "N/A",
         demoURL: "link",
         githubURL: "https://github.com/Project250-SkyForm/Fly-Chicken-Fly"
-    },
-    {
-        id: 6,
-        title: "Portfolio",
-        description: "A personal portfolio website built with React and Tailwind, featuring a timeline, contact form, and fun animations.",
-        longDescription: "This is my personal portfolio website, originally inspired by a YouTube tutorial from PedroTech but significantly enhanced with a custom UI and added features. I introduced a professional timeline section to showcase my experience, a functioning contact form integrated with EmailJS for real-time message handling, and a unique visual flair with interactive supernovae explosion effects. The project is built with React and styled using Tailwind CSS, with a focus on responsiveness and smooth user experience.",
-        images: [
-            "/Projects/portfolio/image_1.png",
-        ],
-        tags: ["React", "Tailwind CSS", "EmailJS", "Vercel"],
-        linkURL: "#home",
-        demoURL: "N/A",
-        githubURL: "https://github.com/icansingh/portfolio"
-    },
+    }
 ];
 
 export const ProjectsSection = () => {

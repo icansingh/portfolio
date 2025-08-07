@@ -14,9 +14,9 @@ const timelineData = [
         duration: "Dec 2024 - Present",
         description: "Built real-time AI tools for Shopify-based commerce.",
         achievements: [
-            "Designed and deployed a recommendation engine for ~250 products using TF-IDF and cosine similarity",
-            "Developed a RAG pipeline using AWS Lambda, DynamoDB, and the Shopify API",
-            "Automated monthly product data updates to adapt to evolving user preferences"
+            "Designed and deployed a recommendation engine for ~250 products using TF-IDF and cosine similarity.",
+            "Developed a RAG pipeline using AWS Lambda, DynamoDB, and the Shopify API.",
+            "Automated monthly product data updates to adapt to evolving user preferences."
         ],
         skills: ["Python", "AWS (Lambda, DynamoDB)", "Shopify API", "Docker", "TF-IDF", "Cosine Similarity", "RAG Pipelines"],
         link: "#"
@@ -30,9 +30,9 @@ const timelineData = [
         duration: "May 2024 - Present",
         description: "NLP research on semantic processing in Alzheimer's patients.",
         achievements: [
-            "Led preprocessing of ~8,000 datapoints across 242 .cha files using Python and Pandas",
-            "Applied cosine similarity to measure semantic distance in verbal fluency responses",
-            "Investigated semantic granularity and embedding models to extract lexical features"
+            "Led preprocessing of ~8,000 datapoints across 242 .cha files using Python and Pandas.",
+            "Applied cosine similarity to measure semantic distance in verbal fluency responses.",
+            "Investigated semantic granularity and embedding models to extract lexical features."
         ],
         skills: ["Python", "Pandas", "Natural Language Processing (NLP)", "Cosine Similarity", "Data Preprocessing"],
         link: "#"
@@ -46,10 +46,10 @@ const timelineData = [
         duration: "May 2024 - Dec 2024",
         description: "MRI-based classification of learning impairments using deep learning.",
         achievements: [
-            "Built a CNN with Multi-Instance Learning in TensorFlow for patient classification",
-            "Processed over 8,000 3D MRI scans, automating parsing and cropping",
-            "Used SHAP, Grad-CAM, LIME, and Saliency Maps for model explainability",
-            "Regularized model using data augmentation, L2, k-fold, and LOO cross-validation"
+            "Built a CNN with Multi-Instance Learning in TensorFlow for patient classification.",
+            "Processed over 8,000 3D MRI scans, automating parsing and cropping.",
+            "Used SHAP, Grad-CAM, LIME, and Saliency Maps for model explainability.",
+            "Regularized model using data augmentation, L2, k-fold, and LOO cross-validation."
         ],
         skills: ["TensorFlow", "Python", "Convolutional Neural Networks (CNN)", "Multi-Instance Learning", "SHAP", "Grad-CAM", "LIME", "Data Augmentation"],
         link: "#"
