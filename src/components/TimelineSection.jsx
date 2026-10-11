@@ -11,7 +11,7 @@ const timelineData = [
         title: "AI Developer",
         company: "So Shall We Inc.",
         location: "Remote - Australia",
-        duration: "Dec 2024 - Present",
+        duration: "Dec 2024 - September 2025",
         description: "Built real-time AI tools for Shopify-based commerce.",
         achievements: [
             "Designed and deployed a recommendation engine for ~250 products using TF-IDF and cosine similarity.",
@@ -27,7 +27,7 @@ const timelineData = [
         title: "Software Developer",
         company: "University of Alberta",
         location: "Edmonton, AB",
-        duration: "May 2024 - Present",
+        duration: "May 2024 - August 2025",
         description: "NLP research on semantic processing in Alzheimer's patients.",
         achievements: [
             "Led preprocessing of ~8,000 datapoints across 242 .cha files using Python and Pandas.",
@@ -43,7 +43,7 @@ const timelineData = [
         title: "Computer Vision Research Assistant",
         company: "University of Alberta",
         location: "Edmonton, AB",
-        duration: "May 2024 - Dec 2024",
+        duration: "May 2023 - Dec 2023",
         description: "MRI-based classification of learning impairments using deep learning.",
         achievements: [
             "Built a CNN with Multi-Instance Learning in TensorFlow for patient classification.",

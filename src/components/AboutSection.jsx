@@ -18,12 +18,11 @@ export const AboutSection = () => {
                             className="w-32 h-32 rounded-full object-cover border-4 border-primary shadow-lg"
                         />
                     </div>
-                    <h3 className="text-2xl font-semibold">AI Developer & Computing Science Student</h3>
+                    <h3 className="text-2xl font-semibold">Recent Graduate & Open to Work</h3>
 
                     <p className="text-muted-foreground">
-                        I'm a Computing Science student at the University of Alberta,
-                        currently working as an AI Developer while conducting
-                        research in computer vision and natural language processing.
+                        I recently graduated from the University of Alberta with a B.Sc. in Computing Science. 
+                        I am open to full-time opprotunities as a Software Developer, AI Developer, or Data Analyst.
                         
                     </p>
 
@@ -62,7 +61,7 @@ export const AboutSection = () => {
                             <div className="text-left">
                                 <h4 className="font-semibold text-lg"> Education</h4>
                                 <p className="text-muted-foreground"> 
-                                Pursuing a B.Sc. in Computing Science at the University of Alberta. {/* with a 3.7 GPA - should i mention GPA?*/}
+                                B.Sc. in Computing Science at the University of Alberta. {/* with a 3.7 GPA - should i mention GPA?*/}
                                 Focused on AI, computer vision, NLP, and cybersecurity.
                                 </p>
                             </div>
